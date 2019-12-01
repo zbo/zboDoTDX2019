@@ -20,7 +20,14 @@ void TestPlugin1(int DataLen,float* pfOUT,float* pfINa,float* pfINb,float* pfINc
 		pfOUT[i]=i;
 }
 
-
+void PrintFxVector(vector<FXing *> FXVector_Clean)
+{
+	ofstream outfile("out.txt",ios::app);
+	for(int i=0;i<FXVector_Clean.size();i++){
+		outfile<<"==========="<<FXVector_Clean[i]->FxType<<'\n';
+		outfile<<"Index: "<<FXVector_Clean[i]->Second->i<<" left: "<< FXVector_Clean[i]->First->i<<" right: "<<FXVector_Clean[i]->Third->i<<'\n';
+	}
+}
 
 void TestPlugin2(int DataLen,float* pfOUT,float* pfINa,float* pfINb,float* pfINc)
 {
@@ -32,6 +39,7 @@ void TestPlugin2(int DataLen,float* pfOUT,float* pfINa,float* pfINb,float* pfINc
 		KX->High = pfINa[i];
 		KX->Low = pfINb[i];
 		KX->i = i;
+		KX->BHan=false;
 		KXianVector.push_back(KX);
 		
 	}
@@ -46,19 +54,19 @@ void TestPlugin2(int DataLen,float* pfOUT,float* pfINa,float* pfINb,float* pfINc
 		if(KXianVector[i]->Low<KX_Min->Low){
 			KX_Min=KXianVector[i];
 		}
-
 	}
 	outfile << "最高点：" << KX_Max->i << "最低点：" << KX_Min->i << "数据总数：" << DataLen <<'\n';
 	//找到Max和Min比较靠前的一个，开始有方向的搜索
 	//Search_From_Max_Min(KX_Max, KX_Min, KXianVector);
 	//归类法找出所有可能的分型
 	vector<FXing*> FXVector = Find_All_FX(KXianVector);
+	vector<FXing*> FXVector_Clean = Clean_All_FX(FXVector);
+	PrintFxVector(FXVector_Clean);
 	FillinPOutDefault(pfOUT,DataLen);
-	FillinPOut(pfOUT,FXVector);
+	FillinPOut(pfOUT,FXVector_Clean);
 	outfile<<"------------------------------------------------"<<'\n';
 	outfile.close();
 	OutputDebugInfo(KXianVector);
-
 }
 
 

@@ -13,6 +13,7 @@ public:
 	float High;
 	float Low;
 	int i;
+	bool BHan;
 };
 
 class FXing{
@@ -21,6 +22,13 @@ public:
 	KXian* Second;
 	KXian* Third;
 	int FxType;
+	//int DrawIndex;
+};
+
+
+struct BaoHanRela{
+	bool isBaoHan;
+	int BaoHanType; //first BH second 1, -1, 0
 };
 
 

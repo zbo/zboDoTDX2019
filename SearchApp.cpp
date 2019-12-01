@@ -23,7 +23,7 @@ FXing* Search_Ding_FXing_By_DD(vector<KXian*> KXianVector, int start){
 	FX_Di->First=KXianVector[start-1];
 	FX_Di->Second=KXianVector[start];
 	int i=1;
-	while(BaoHan(FX_Di->Second, KXianVector[start+i])){
+	while(BaoHan(FX_Di->Second, KXianVector[start+i]).isBaoHan){
 		FX_Di->Second->High=KXianVector[start+i]->High;
 		i++;
 	}

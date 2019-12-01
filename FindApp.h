@@ -7,3 +7,4 @@
 using namespace std;
 
 vector<FXing *> Find_All_FX(std::vector<KXian *> KXianVector);
+vector<FXing *> Clean_All_FX(vector<FXing *> FXVector);

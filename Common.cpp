@@ -24,11 +24,21 @@ vector<string> mySplit(const string& str, string sp_string)  // split(), str ÊÇÒ
     return vecString; 
 } 
 
-bool BaoHan(KXian* firstK, KXian* secondK){
-	if(firstK->High>secondK->High&&firstK->Low<secondK->Low){
-		return true;
-	}else{
-		return false;}
+BaoHanRela BaoHan(KXian* firstK, KXian* secondK){
+	BaoHanRela rela;
+	if(firstK->High>=secondK->High&&firstK->Low<=secondK->Low){
+		rela.isBaoHan=true;
+		rela.BaoHanType = -1;
+		return rela;
+	}else if(firstK->High<=secondK->High&&firstK->Low>=secondK->Low){
+		rela.isBaoHan=true;
+		rela.BaoHanType = 1;
+		return rela;
+	}
+	else{
+		rela.isBaoHan=false;
+		rela.BaoHanType = 0;
+		return rela;}
 }
 
 void OutputDebugInfo(std::vector<KXian *> &KXianVector)
