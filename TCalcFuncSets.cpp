@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include "TCalcFuncSets.h"
 #include "Common.h"
+#include "SearchApp.h"
 #include <vector>
 #include <iostream>
 #include <fstream>
@@ -10,46 +11,17 @@ using namespace std;
 
 //生成的dll及相关依赖dll请拷贝到通达信安装目录的T0002/dlls/下面,再在公式管理器进行绑定
 
+
+
 void TestPlugin1(int DataLen,float* pfOUT,float* pfINa,float* pfINb,float* pfINc)
 {
 	for(int i=0;i<DataLen;i++)
 		pfOUT[i]=i;
 }
-FXing* Search_Di_FXing(vector<KXian*> KXianVector, int start){
-	ofstream outfile("out.txt",ios::app);
-	outfile <<"from "<<start<< "进入搜底分型函数"<<'\n';
-	FXing* FX_Di=new FXing;
-	return FX_Di;
-}
-FXing* Search_Ding_FXing(vector<KXian*> KXianVector, int start){
-	ofstream outfile("out.txt",ios::app);
-	outfile <<"from "<<start<< "进入搜顶分型函数"<<'\n';
-	FXing* FX_Di=new FXing;
-	FX_Di->First=KXianVector[start-1];
-	FX_Di->Second=KXianVector[start];
-	int i=1;
-	while(BaoHan(FX_Di->Second, KXianVector[start+i])){
-		FX_Di->Second->High=KXianVector[start+i]->High;
-		i++;
-	}
-	FX_Di->Third=KXianVector[start+i];
-	FXing* FX_Ding=new FXing;
-	
 
-	return FX_Ding;
-}
-std::vector<FXing*> SearchFenXing(vector<KXian*> KXianVector, int start, int fromMax){
-	ofstream outfile("out.txt",ios::app);
-	std::vector<FXing*> FXingVector;
 
-	if(fromMax==1){
-		FXing* Di_FXing = Search_Di_FXing(KXianVector, start);
-	}else{
-		FXing* Ding_FXing = Search_Ding_FXing(KXianVector, start);
-	}
-	return FXingVector;
 
-}
+
 void TestPlugin2(int DataLen,float* pfOUT,float* pfINa,float* pfINb,float* pfINc)
 {
 	ofstream outfile("out.txt",ios::app);	
@@ -78,19 +50,7 @@ void TestPlugin2(int DataLen,float* pfOUT,float* pfINa,float* pfINb,float* pfINc
 	}
 	outfile << "最高点：" << KX_Max->i << "最低点：" << KX_Min->i << "数据总数：" << DataLen <<'\n';
 	//找到Max和Min比较靠前的一个，开始有方向的搜索
-	std::vector<FXing*> Fxlist;
-	if(KX_Max->i>=KX_Min->i){ //Max比Min大，从Min开始搜索,fromMax=-1
-		if(KX_Min->i!=0)
-		{Fxlist = SearchFenXing(KXianVector,KX_Min->i,-1);}
-		else
-		{Fxlist = SearchFenXing(KXianVector,KX_Max->i,1);}
-	}else{
-		if(KX_Max->i!=0)
-		{Fxlist = SearchFenXing(KXianVector,KX_Max->i,1);}
-		else
-		{Fxlist = SearchFenXing(KXianVector,KX_Min->i,-1);}
-	}
-
+	//Search_From_Max_Min(KX_Max, KX_Min, KXianVector);
 	//测试输出指标
 	for(int i=1;i<DataLen-1;i++)
 	{
