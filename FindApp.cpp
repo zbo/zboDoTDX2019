@@ -42,18 +42,31 @@ vector<FXing *> Find_Di_FX_Without_BH(std::vector<KXian *> KXianVector)
 	return FXingVector;
 }
 
+KXian* DeepCopy(KXian* KXianIn)
+{
+	KXian* KX = new KXian;
+	KX->High=KXianIn->High;
+	KX->i=KXianIn->i;
+	KX->Low=KXianIn->Low;
+	return KX;
+}
+
 vector<FXing *> Find_Ding_FX_BH(std::vector<KXian *> KXianVector)
 {
 	vector<KXian*> KXianVector_Clean;
 	vector<FXing*> FXingVector;
-	KXian* KX;
-	KX->High=KXianVector[0]->High;
-	KX->i=KXianVector[0]->i;
-	KX->Low=KXianVector[0]->Low;
-	KXianVector_Clean.push_back(KX);
+	KXianVector_Clean.push_back(DeepCopy(KXianVector[0]));
 	for(int i=1; i<KXianVector.size()-1;i++){
-		if(BaoHan(KXianVector[i-1],KXianVector[i])){
-
+		if(BaoHan(KXianVector_Clean[i-1],KXianVector[i])){
+			KXian* KX = new KXian;
+			KX->High=KXianVector_Clean[i-1]->High;
+			KX->i=i;
+			KX->Low=KXianVector[i]->Low;
+			KXianVector_Clean.push_back(KX);
+		}
+		else{
+			KXian* tempKX = DeepCopy(KXianVector[i]);
+			KXianVector_Clean.push_back(tempKX);
 		}
 	}
 	return FXingVector;
