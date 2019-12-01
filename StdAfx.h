@@ -21,8 +21,7 @@ public:
 	KXian* First;
 	KXian* Second;
 	KXian* Third;
-	int FxType;
-	//int DrawIndex;
+	int FXType;
 };
 
 

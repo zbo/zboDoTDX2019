@@ -24,7 +24,7 @@ void PrintFxVector(vector<FXing *> FXVector_Clean)
 {
 	ofstream outfile("out.txt",ios::app);
 	for(int i=0;i<FXVector_Clean.size();i++){
-		outfile<<"==========="<<FXVector_Clean[i]->FxType<<'\n';
+		outfile<<"==========="<<FXVector_Clean[i]->FXType<<'\n';
 		outfile<<"Index: "<<FXVector_Clean[i]->Second->i<<" left: "<< FXVector_Clean[i]->First->i<<" right: "<<FXVector_Clean[i]->Third->i<<'\n';
 	}
 }
@@ -61,6 +61,8 @@ void TestPlugin2(int DataLen,float* pfOUT,float* pfINa,float* pfINb,float* pfINc
 	//归类法找出所有可能的分型
 	vector<FXing*> FXVector = Find_All_FX(KXianVector);
 	vector<FXing*> FXVector_Clean = Clean_All_FX(FXVector);
+	vector<FXing*> FXVector_Adjust = Adjust_All_FX(FXVector_Clean, KXianVector);
+
 	PrintFxVector(FXVector_Clean);
 	FillinPOutDefault(pfOUT,DataLen);
 	FillinPOut(pfOUT,FXVector_Clean);

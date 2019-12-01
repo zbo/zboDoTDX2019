@@ -54,7 +54,7 @@ void FillinPOut(float* pfOUT, vector<FXing *> FXVector)
 {
 	for(int i=0;i<FXVector.size();i++){
 		int index = FXVector[i]->Second->i;
-		int fxtype = FXVector[i]->FxType;
+		int fxtype = FXVector[i]->FXType;
 		pfOUT[index]=fxtype;
 	}
 }
