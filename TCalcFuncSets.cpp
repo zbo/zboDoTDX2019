@@ -2,6 +2,7 @@
 #include "TCalcFuncSets.h"
 #include "Common.h"
 #include "SearchApp.h"
+#include "FindApp.h"
 #include <vector>
 #include <iostream>
 #include <fstream>
@@ -18,9 +19,6 @@ void TestPlugin1(int DataLen,float* pfOUT,float* pfINa,float* pfINb,float* pfINc
 	for(int i=0;i<DataLen;i++)
 		pfOUT[i]=i;
 }
-
-
-
 
 void TestPlugin2(int DataLen,float* pfOUT,float* pfINa,float* pfINb,float* pfINc)
 {
@@ -46,24 +44,13 @@ void TestPlugin2(int DataLen,float* pfOUT,float* pfINa,float* pfINb,float* pfINc
 		if(KXianVector[i]->Low<KX_Min->Low){
 			KX_Min=KXianVector[i];
 		}
-		//outfile << "序号：" << KX->i << "高点：" << KX->High << " 低点：" << KX->Low <<'\n';
+
 	}
 	outfile << "最高点：" << KX_Max->i << "最低点：" << KX_Min->i << "数据总数：" << DataLen <<'\n';
 	//找到Max和Min比较靠前的一个，开始有方向的搜索
 	//Search_From_Max_Min(KX_Max, KX_Min, KXianVector);
-	//测试输出指标
-	for(int i=1;i<DataLen-1;i++)
-	{
-		if(i==KX_Max->i){
-			pfOUT[i]=1;
-		}
-		else if(i==KX_Min->i){
-			pfOUT[i]=-1;
-		}
-		else{
-			pfOUT[i]=0;
-		}
-	}
+	//归类法找出所有可能的分型
+	vector<FXing*> FXVector = Find_All_FX(KXianVector);
 	outfile<<"------------------------------------------------"<<'\n';
 	outfile.close();
 	ofstream debug_file("debug.txt",ios::trunc);
@@ -92,9 +79,6 @@ BOOL RegisterTdxFunc(PluginTCalcFuncInfo** pFun)
 	}
 	return FALSE;
 }
-
-
-
 
 int _tmain(int argc, _TCHAR* argv[])
 {
