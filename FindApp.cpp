@@ -17,7 +17,7 @@ vector<FXing *> Find_Ding_FX_Without_BH(std::vector<KXian *> KXianVector)
 			DingFXing->First=KXianVector[i-1];
 			DingFXing->Second=KXianVector[i];
 			DingFXing->Third=KXianVector[i+1];
-			DingFXing->FXType=1;
+			DingFXing->FxType=FXing::Ding;
 			FXingVector.push_back(DingFXing);
 		}
 	}
@@ -37,7 +37,7 @@ vector<FXing *> Find_Di_FX_Without_BH(std::vector<KXian *> KXianVector)
 			DingFXing->First=KXianVector[i-1];
 			DingFXing->Second=KXianVector[i];
 			DingFXing->Third=KXianVector[i+1];
-			DingFXing->FXType=-1;
+			DingFXing->FxType=FXing::Di;
 			FXingVector.push_back(DingFXing);
 		}
 	}
@@ -172,7 +172,7 @@ vector<FXing *> Adjust_All_FX(vector<FXing *> FXVector_Clean, vector<KXian *> al
 	for(int i=0;i<FXVector_Clean.size();i++){
 		FXing* FX=FXVector_Clean[i];
 		if(FX->Third->i>FX->First->i+2){
-			int a = FX->FXType;
+			int a = FX->FxType;
 		}
 		Adjust_FXing_Vector.push_back(FX);
 	}

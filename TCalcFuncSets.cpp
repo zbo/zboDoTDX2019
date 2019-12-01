@@ -24,7 +24,7 @@ void PrintFxVector(vector<FXing *> FXVector_Clean)
 {
 	ofstream outfile("out.txt",ios::app);
 	for(int i=0;i<FXVector_Clean.size();i++){
-		outfile<<"==========="<<FXVector_Clean[i]->FXType<<'\n';
+		outfile<<"==========="<<FXVector_Clean[i]->FxType<<'\n';
 		outfile<<"Index: "<<FXVector_Clean[i]->Second->i<<" left: "<< FXVector_Clean[i]->First->i<<" right: "<<FXVector_Clean[i]->Third->i<<'\n';
 	}
 }

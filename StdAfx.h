@@ -18,10 +18,12 @@ public:
 
 class FXing{
 public:
+	enum DINGDI {Ding, Di};
 	KXian* First;
 	KXian* Second;
 	KXian* Third;
-	int FXType;
+	//int FXType;
+	DINGDI FxType;
 };
 
 
