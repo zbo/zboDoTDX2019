@@ -12,7 +12,7 @@ class KXian{
 public:
 	float High;
 	float Low;
-	float i;
+	int i;
 };
 
 class FXing{
@@ -20,6 +20,7 @@ public:
 	KXian* First;
 	KXian* Second;
 	KXian* Third;
+	int FxType;
 };
 
 

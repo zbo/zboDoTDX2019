@@ -30,3 +30,27 @@ bool BaoHan(KXian* firstK, KXian* secondK){
 	}else{
 		return false;}
 }
+
+void OutputDebugInfo(std::vector<KXian *> &KXianVector)
+{
+	ofstream debug_file("debug.txt",ios::trunc);
+	for(int i=0; i<KXianVector.size(); i++){
+		debug_file<<KXianVector[i]->High<<" "<<KXianVector[i]->Low<<'\n';
+	}
+	debug_file.close();
+}
+
+void FillinPOut(float* pfOUT, vector<FXing *> FXVector)
+{
+	for(int i=0;i<FXVector.size();i++){
+		int index = FXVector[i]->Second->i;
+		int fxtype = FXVector[i]->FxType;
+		pfOUT[index]=fxtype;
+	}
+}
+void FillinPOutDefault(float* pfOUT, int DataLen)
+{
+	for(int i=0;i<DataLen;i++){
+		pfOUT[i]=0;
+	}
+}

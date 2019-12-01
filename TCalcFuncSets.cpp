@@ -20,6 +20,8 @@ void TestPlugin1(int DataLen,float* pfOUT,float* pfINa,float* pfINb,float* pfINc
 		pfOUT[i]=i;
 }
 
+
+
 void TestPlugin2(int DataLen,float* pfOUT,float* pfINa,float* pfINb,float* pfINc)
 {
 	ofstream outfile("out.txt",ios::app);	
@@ -51,13 +53,12 @@ void TestPlugin2(int DataLen,float* pfOUT,float* pfINa,float* pfINb,float* pfINc
 	//Search_From_Max_Min(KX_Max, KX_Min, KXianVector);
 	//归类法找出所有可能的分型
 	vector<FXing*> FXVector = Find_All_FX(KXianVector);
+	FillinPOutDefault(pfOUT,DataLen);
+	FillinPOut(pfOUT,FXVector);
 	outfile<<"------------------------------------------------"<<'\n';
 	outfile.close();
-	ofstream debug_file("debug.txt",ios::trunc);
-	for(int i=0; i<KXianVector.size(); i++){
-		debug_file<<KXianVector[i]->High<<" "<<KXianVector[i]->Low<<'\n';
-	}
-	debug_file.close();
+	OutputDebugInfo(KXianVector);
+
 }
 
 
