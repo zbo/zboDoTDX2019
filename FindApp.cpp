@@ -166,13 +166,47 @@ vector<FXing *> Clean_All_FX(vector<FXing *> FXVector)
 	return Clean_FXing_Vector;
 }
 
+KXian* Find_GD_KX(FXing* FX, vector<KXian *> allKXianVector)
+{
+	int first_i = FX->First->i;
+	int third_i = FX->Third->i;
+	int i=first_i+1;
+	KXian* kx = allKXianVector[i];
+	while(i<third_i){
+		i++;
+		if(allKXianVector[i]->High>kx->High)
+			kx=allKXianVector[i];
+	}
+	return kx;
+}
+
+KXian* Find_DD_KX(FXing* FX, vector<KXian *> allKXianVector)
+{
+	int first_i = FX->First->i;
+	int third_i = FX->Third->i;
+	int i=first_i+1;
+	KXian* kx = allKXianVector[i];
+	while(i<third_i){
+		i++;
+		if(allKXianVector[i]->Low<kx->Low)
+			kx=allKXianVector[i];
+	}
+	return kx;	
+}
+
 vector<FXing *> Adjust_All_FX(vector<FXing *> FXVector_Clean, vector<KXian *> allKXianVector)
 {
 	vector<FXing*> Adjust_FXing_Vector;
 	for(int i=0;i<FXVector_Clean.size();i++){
 		FXing* FX=FXVector_Clean[i];
 		if(FX->Third->i>FX->First->i+2){
-			int a = FX->FxType;
+			 if(FX->FxType==FXing::Ding){
+				 KXian* GDKXian=Find_GD_KX(FX,allKXianVector); 
+				 FX->Second=GDKXian;
+			 }else{
+				 KXian* DDKXian=Find_DD_KX(FX,allKXianVector);
+				 FX->Second=DDKXian;
+			 }
 		}
 		Adjust_FXing_Vector.push_back(FX);
 	}

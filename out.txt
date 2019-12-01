@@ -1398,3 +1398,269 @@ Index: 412 left: 410 right: 414
 Index: 416 left: 415 right: 417
 最高点：0最低点：200数据总数：420
 ------------------------------------------------
+===========1
+Index: 4 left: 3 right: 5
+===========0
+Index: 6 left: 5 right: 7
+===========1
+Index: 9 left: 8 right: 10
+===========0
+Index: 10 left: 9 right: 11
+===========0
+Index: 14 left: 13 right: 15
+===========1
+Index: 15 left: 14 right: 16
+===========0
+Index: 16 left: 15 right: 17
+===========1
+Index: 17 left: 16 right: 18
+===========0
+Index: 19 left: 18 right: 20
+===========1
+Index: 24 left: 23 right: 25
+===========0
+Index: 25 left: 24 right: 26
+===========1
+Index: 27 left: 26 right: 28
+===========0
+Index: 28 left: 27 right: 30
+===========1
+Index: 31 left: 30 right: 32
+===========1
+Index: 44 left: 42 right: 45
+===========0
+Index: 45 left: 44 right: 46
+===========1
+Index: 52 left: 51 right: 53
+===========0
+Index: 58 left: 57 right: 59
+===========0
+Index: 67 left: 66 right: 68
+===========1
+Index: 68 left: 67 right: 69
+===========0
+Index: 69 left: 68 right: 70
+===========1
+Index: 75 left: 74 right: 76
+===========0
+Index: 76 left: 75 right: 77
+===========1
+Index: 78 left: 77 right: 79
+===========0
+Index: 80 left: 79 right: 81
+===========1
+Index: 81 left: 80 right: 82
+===========0
+Index: 82 left: 81 right: 84
+===========1
+Index: 85 left: 84 right: 86
+===========0
+Index: 86 left: 85 right: 87
+===========0
+Index: 92 left: 90 right: 94
+===========1
+Index: 99 left: 98 right: 100
+===========0
+Index: 103 left: 102 right: 104
+===========1
+Index: 109 left: 108 right: 110
+===========0
+Index: 110 left: 109 right: 112
+===========0
+Index: 115 left: 114 right: 116
+===========1
+Index: 119 left: 118 right: 120
+===========0
+Index: 120 left: 119 right: 121
+===========1
+Index: 126 left: 125 right: 127
+===========0
+Index: 128 left: 127 right: 129
+===========0
+Index: 137 left: 136 right: 138
+===========1
+Index: 147 left: 144 right: 148
+===========0
+Index: 148 left: 147 right: 150
+===========1
+Index: 151 left: 150 right: 152
+===========0
+Index: 152 left: 151 right: 153
+===========1
+Index: 154 left: 153 right: 155
+===========0
+Index: 157 left: 156 right: 159
+===========1
+Index: 159 left: 158 right: 160
+===========0
+Index: 160 left: 159 right: 161
+===========1
+Index: 163 left: 160 right: 164
+===========1
+Index: 165 left: 164 right: 166
+===========0
+Index: 168 left: 167 right: 169
+===========1
+Index: 170 left: 169 right: 171
+===========0
+Index: 171 left: 170 right: 172
+===========1
+Index: 175 left: 172 right: 176
+===========0
+Index: 176 left: 175 right: 177
+===========1
+Index: 177 left: 176 right: 178
+===========0
+Index: 179 left: 178 right: 180
+===========1
+Index: 183 left: 181 right: 186
+===========0
+Index: 186 left: 185 right: 187
+===========1
+Index: 192 left: 191 right: 193
+===========0
+Index: 193 left: 192 right: 194
+===========1
+Index: 200 left: 197 right: 201
+===========1
+Index: 202 left: 201 right: 203
+===========0
+Index: 203 left: 202 right: 204
+===========1
+Index: 204 left: 203 right: 205
+===========1
+Index: 207 left: 206 right: 211
+===========0
+Index: 211 left: 210 right: 212
+===========1
+Index: 214 left: 211 right: 216
+===========0
+Index: 216 left: 214 right: 219
+===========0
+Index: 224 left: 223 right: 225
+===========1
+Index: 225 left: 224 right: 226
+===========0
+Index: 233 left: 231 right: 234
+===========0
+Index: 239 left: 238 right: 240
+===========1
+Index: 241 left: 240 right: 242
+===========0
+Index: 242 left: 241 right: 243
+===========1
+Index: 244 left: 243 right: 245
+===========0
+Index: 247 left: 246 right: 248
+===========1
+Index: 248 left: 247 right: 249
+===========0
+Index: 249 left: 248 right: 250
+===========1
+Index: 253 left: 252 right: 254
+===========0
+Index: 260 left: 258 right: 262
+===========1
+Index: 264 left: 263 right: 265
+===========0
+Index: 265 left: 264 right: 266
+===========1
+Index: 266 left: 265 right: 267
+===========0
+Index: 281 left: 279 right: 283
+===========1
+Index: 283 left: 282 right: 284
+===========0
+Index: 286 left: 284 right: 287
+===========1
+Index: 287 left: 286 right: 288
+===========0
+Index: 288 left: 287 right: 290
+===========0
+Index: 294 left: 293 right: 295
+===========1
+Index: 295 left: 294 right: 296
+===========0
+Index: 296 left: 295 right: 297
+===========1
+Index: 298 left: 297 right: 299
+===========0
+Index: 299 left: 298 right: 300
+===========0
+Index: 302 left: 301 right: 305
+===========1
+Index: 307 left: 306 right: 308
+===========0
+Index: 311 left: 310 right: 312
+===========1
+Index: 312 left: 311 right: 314
+===========0
+Index: 314 left: 313 right: 315
+===========1
+Index: 315 left: 314 right: 316
+===========0
+Index: 317 left: 316 right: 318
+===========1
+Index: 326 left: 322 right: 327
+===========0
+Index: 326 left: 324 right: 328
+===========1
+Index: 329 left: 328 right: 330
+===========0
+Index: 330 left: 329 right: 331
+===========1
+Index: 331 left: 330 right: 333
+===========0
+Index: 337 left: 336 right: 338
+===========1
+Index: 342 left: 341 right: 343
+===========0
+Index: 348 left: 347 right: 349
+===========1
+Index: 349 left: 348 right: 350
+===========0
+Index: 352 left: 351 right: 353
+===========1
+Index: 354 left: 352 right: 355
+===========0
+Index: 355 left: 354 right: 356
+===========1
+Index: 356 left: 355 right: 357
+===========0
+Index: 357 left: 356 right: 360
+===========1
+Index: 368 left: 367 right: 369
+===========0
+Index: 370 left: 369 right: 371
+===========1
+Index: 371 left: 370 right: 373
+===========0
+Index: 374 left: 373 right: 375
+===========1
+Index: 375 left: 374 right: 376
+===========0
+Index: 376 left: 375 right: 377
+===========1
+Index: 382 left: 381 right: 383
+===========0
+Index: 385 left: 384 right: 386
+===========1
+Index: 390 left: 389 right: 391
+===========0
+Index: 392 left: 391 right: 393
+===========1
+Index: 394 left: 392 right: 395
+===========0
+Index: 395 left: 394 right: 396
+===========1
+Index: 399 left: 397 right: 400
+===========0
+Index: 401 left: 400 right: 404
+===========1
+Index: 410 left: 409 right: 411
+===========0
+Index: 411 left: 410 right: 414
+===========0
+Index: 416 left: 415 right: 417
+最高点：0最低点：200数据总数：420
+------------------------------------------------
